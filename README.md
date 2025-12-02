@@ -1,16 +1,41 @@
-# caida_libre
+# Simulador de Caída Libre
 
-A new Flutter project.
+Esta aplicación es una herramienta interactiva diseñada para simular el fenómeno físico de la caída libre. Permite a los estudiantes experimentar con variables como la gravedad, la altura y la resistencia del aire en un entorno visual y amigable.
 
-## Getting Started
+Este proyecto fue desarrollado como parte del trabajo de clase para el curso de **Software Libre**.
 
-This project is a starting point for a Flutter application.
+## Características Principales
 
-A few resources to get you started if this is your first Flutter project:
+- **Simulación Física**: Cálculos en tiempo real de posición y velocidad.
+- **Resistencia del Aire**: Opción para activar y ajustar el coeficiente de arrastre.
+- **Zoom Dinámico**: La cámara se ajusta automáticamente para seguir objetos lanzados hacia arriba.
+- **Multiplataforma**: Funciona en Windows, Linux y Android.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Instrucciones de Replicación
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Para ejecutar este proyecto en tu entorno local, sigue estos pasos sencillos:
+
+1. **Prerrequisitos**: Asegúrate de tener instalado el [SDK de Flutter](https://flutter.dev/docs/get-started/install).
+2. **Clonar**: Descarga el código fuente de este repositorio.
+3. **Dependencias**: Abre una terminal en la carpeta del proyecto e instala las librerías necesarias:
+   ```bash
+   flutter pub get
+   ```
+4. **Ejecutar**: Lanza la aplicación en tu dispositivo o emulador preferido:
+   ```bash
+   flutter run
+   ```
+   _(Para Linux/Windows, usa `flutter run -d linux` o `flutter run -d windows`)_
+
+## Colaboración
+
+¡Las contribuciones son bienvenidas! Si deseas mejorar este simulador:
+
+1. Haz un **Fork** de este repositorio.
+2. Crea una rama para tu mejora (`git checkout -b feature/mi-mejora`).
+3. Realiza tus cambios y haz **Commit**.
+4. Envía un **Pull Request** explicando qué has añadido o arreglado.
+
+---
+
+_Proyecto académico - Curso de Software Libre_
