@@ -21,7 +21,7 @@ Para ejecutar este proyecto en tu entorno local, sigue estos pasos sencillos:
    ```bash
    flutter pub get
    ```
-4. El ejecutable estará en `build\windows\runner\Release\caida_libre.exe`
+4. El ejecutable estará en `build\windows\x64\runner\Release\caida_libre.exe`
 
 ## Integración Continua (CI/CD)
 
@@ -37,7 +37,18 @@ Para descargar la última versión:
 1. Ve a la pestaña **Actions** en el repositorio de GitHub.
 2. Haz clic en la última ejecución del flujo "Build and Release".
 3. Baja a la sección "Artifacts" y descarga el archivo que necesites.
-4. **Ejecutar**: Lanza la aplicación en tu dispositivo o emulador preferido:
+
+### Crear una Release
+
+Para generar una versión oficial (Release) en GitHub con archivos descargables:
+
+1. Crea un tag con la versión (ej. `v1.0`):
+   ```bash
+   git tag v1.0
+   git push origin v1.0
+   ```
+2. GitHub Actions detectará el tag, compilará la app y creará automáticamente la **Release** con los archivos adjuntos.
+3. **Ejecutar**: Lanza la aplicación en tu dispositivo o emulador preferido:
    ```bash
    flutter run
    ```

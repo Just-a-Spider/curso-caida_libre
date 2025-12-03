@@ -3,6 +3,8 @@ name: Build and Release
 on:
   push:
     branches: ["main"]
+    tags:
+      - "v*" # Trigger on version tags, e.g. v1.0, v2.3.4
   pull_request:
     branches: ["main"]
   workflow_dispatch:
@@ -52,8 +54,39 @@ jobs:
       - run: flutter pub get
       - run: flutter build windows --release
       - name: Archive Release
-        run: Compress-Archive -Path build\windows\runner\Release\* -DestinationPath caida_libre_windows.zip
+        run: Compress-Archive -Path build\windows\x64\runner\Release\* -DestinationPath caida_libre_windows.zip
       - uses: actions/upload-artifact@v4
         with:
           name: windows-build
           path: caida_libre_windows.zip
+
+  create-release:
+    needs: [build-android, build-linux, build-windows]
+    if: startsWith(github.ref, 'refs/tags/v')
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: android-apk
+      - uses: actions/download-artifact@v4
+        with:
+          name: linux-build
+      - uses: actions/download-artifact@v4
+        with:
+          name: windows-build
+
+      - name: Rename APK
+        run: mv app-release.apk caida_libre_android.apk
+
+      - name: Create Release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: |
+            caida_libre_android.apk
+            caida_libre_linux.zip
+            caida_libre_windows.zip
+          draft: false
+          prerelease: false
+          generate_release_notes: true
