@@ -21,6 +21,22 @@ Para ejecutar este proyecto en tu entorno local, sigue estos pasos sencillos:
    ```bash
    flutter pub get
    ```
+4. El ejecutable estará en `build\windows\runner\Release\caida_libre.exe`
+
+## Integración Continua (CI/CD)
+
+Este proyecto cuenta con un flujo de trabajo de GitHub Actions que genera automáticamente los ejecutables para Android, Linux y Windows.
+
+Cada vez que se hace un **Push** o **Pull Request** a la rama `main`:
+
+1. Se compila el proyecto en los tres sistemas operativos.
+2. Se suben los artefactos generados (APK y Zips) a la pestaña **Actions** de GitHub.
+
+Para descargar la última versión:
+
+1. Ve a la pestaña **Actions** en el repositorio de GitHub.
+2. Haz clic en la última ejecución del flujo "Build and Release".
+3. Baja a la sección "Artifacts" y descarga el archivo que necesites.
 4. **Ejecutar**: Lanza la aplicación en tu dispositivo o emulador preferido:
    ```bash
    flutter run
