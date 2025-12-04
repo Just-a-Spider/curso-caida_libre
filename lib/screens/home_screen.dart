@@ -40,7 +40,7 @@ class _HomeScreenState extends State<HomeScreen> {
           children: [
             Icon(FontAwesomeIcons.feather, size: 20),
             SizedBox(width: 10),
-            Text('Simulador de Caída Libre'),
+            Text('GraviLab'),
           ],
         ),
         actions: [

@@ -16,7 +16,7 @@ class CaidaLibreApp extends StatelessWidget {
     return MultiProvider(
       providers: [ChangeNotifierProvider(create: (_) => SimulationState())],
       child: MaterialApp(
-        title: 'Simulador de Caída Libre',
+        title: 'GraviLab',
         debugShowCheckedModeBanner: false,
         theme: AppTheme.lightTheme,
         home: const HomeScreen(),

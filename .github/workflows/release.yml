@@ -38,11 +38,11 @@ jobs:
       - run: flutter pub get
       - run: flutter build linux --release
       - name: Archive Release
-        run: zip -r caida_libre_linux.zip build/linux/x64/release/bundle
+        run: zip -r gravilab_linux.zip build/linux/x64/release/bundle
       - uses: actions/upload-artifact@v4
         with:
           name: linux-build
-          path: caida_libre_linux.zip
+          path: gravilab_linux.zip
 
   build-windows:
     runs-on: windows-latest
@@ -54,11 +54,11 @@ jobs:
       - run: flutter pub get
       - run: flutter build windows --release
       - name: Archive Release
-        run: Compress-Archive -Path build\windows\x64\runner\Release\* -DestinationPath caida_libre_windows.zip
+        run: Compress-Archive -Path build\windows\x64\runner\Release\* -DestinationPath gravilab_windows.zip
       - uses: actions/upload-artifact@v4
         with:
           name: windows-build
-          path: caida_libre_windows.zip
+          path: gravilab_windows.zip
 
   create-release:
     needs: [build-android, build-linux, build-windows]
@@ -78,15 +78,15 @@ jobs:
           name: windows-build
 
       - name: Rename APK
-        run: mv app-release.apk caida_libre_android.apk
+        run: mv app-release.apk gravilab_android.apk
 
       - name: Create Release
         uses: softprops/action-gh-release@v1
         with:
           files: |
-            caida_libre_android.apk
-            caida_libre_linux.zip
-            caida_libre_windows.zip
+            gravilab_android.apk
+            gravilab_linux.zip
+            gravilab_windows.zip
           draft: false
           prerelease: false
           generate_release_notes: true

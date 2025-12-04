@@ -2,7 +2,15 @@
 
 Esta aplicación es una herramienta interactiva diseñada para simular el fenómeno físico de la caída libre. Permite a los estudiantes experimentar con variables como la gravedad, la altura y la resistencia del aire en un entorno visual y amigable.
 
-Este proyecto fue desarrollado como parte del trabajo de clase para el curso de **Software Libre**.
+# GraviLab
+
+**GraviLab** es una aplicación interactiva diseñada para ayudar a estudiantes de primaria y secundaria a comprender los conceptos de la caída libre y el movimiento vertical.
+
+Desarrollada en **Flutter**, esta herramienta permite visualizar simulaciones físicas en tiempo real, experimentar con la resistencia del aire y resolver desafíos educativos.
+
+---
+
+_Proyecto académico - Curso de Software Libre_
 
 ## Características Principales
 
@@ -11,17 +19,24 @@ Este proyecto fue desarrollado como parte del trabajo de clase para el curso de 
 - **Zoom Dinámico**: La cámara se ajusta automáticamente para seguir objetos lanzados hacia arriba.
 - **Multiplataforma**: Funciona en Windows, Linux y Android.
 
-## Instrucciones de Replicación
+## Descargas / Releases
 
-Para ejecutar este proyecto en tu entorno local, sigue estos pasos sencillos:
+Puedes encontrar los ejecutables generados en la carpeta `releases/` de este repositorio:
 
-1. **Prerrequisitos**: Asegúrate de tener instalado el [SDK de Flutter](https://flutter.dev/docs/get-started/install).
-2. **Clonar**: Descarga el código fuente de este repositorio.
-3. **Dependencias**: Abre una terminal en la carpeta del proyecto e instala las librerías necesarias:
-   ```bash
-   flutter pub get
+- **Android**: `releases/gravilab_android.apk`
+- **Linux**: `releases/gravilab_linux.zip` (Descomprimir y ejecutar `caida_libre`)
+
+## Compilación en Windows
+
+Debido a que este entorno es Linux, no se ha generado el ejecutable .exe automáticamente. Para generarlo en Windows:
+
+1. Instala Flutter en Windows.
+2. Clona este repositorio.
+3. Ejecuta:
+   ```cmd
+   flutter build windows
    ```
-4. El ejecutable estará en `build\windows\x64\runner\Release\caida_libre.exe`
+4. El ejecutable estará en `build\windows\x64\runner\Release\gravilab.exe`
 
 ## Integración Continua (CI/CD)
 
@@ -34,9 +49,9 @@ Cada vez que se hace un **Push** o **Pull Request** a la rama `main`:
 
 Para descargar la última versión:
 
-1. Ve a la pestaña **Actions** en el repositorio de GitHub.
-2. Haz clic en la última ejecución del flujo "Build and Release".
-3. Baja a la sección "Artifacts" y descarga el archivo que necesites.
+11. Ve a la pestaña **Actions** en el repositorio de GitHub.
+12. Haz clic en la última ejecución del flujo "Build and Release".
+13. Baja a la sección "Artifacts" y descarga el archivo que necesites.
 
 ### Crear una Release
 
