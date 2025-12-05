@@ -63,11 +63,17 @@ Para generar una versión oficial (Release) en GitHub con archivos descargables:
    git push origin v1.0
    ```
 2. GitHub Actions detectará el tag, compilará la app y creará automáticamente la **Release** con los archivos adjuntos.
-3. **Ejecutar**: Lanza la aplicación en tu dispositivo o emulador preferido:
-   ```bash
-   flutter run
-   ```
-   _(Para Linux/Windows, usa `flutter run -d linux` o `flutter run -d windows`)_
+
+## Licencia
+
+Este proyecto está bajo la Licencia **GNU General Public License v3.0 (GPLv3)**.
+Puedes ver el texto completo en el archivo [LICENSE](LICENSE). 3. **Ejecutar**: Lanza la aplicación en tu dispositivo o emulador preferido:
+
+```bash
+flutter run
+```
+
+_(Para Linux/Windows, usa `flutter run -d linux` o `flutter run -d windows`)_
 
 ## Colaboración
 
